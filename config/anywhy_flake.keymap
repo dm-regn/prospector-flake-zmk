@@ -126,10 +126,10 @@
 
         base {
             bindings = <
-&none  &kp X        &kp W  &kp M      &kp P      &kp Z    &none  &kp F  &kp U      &kp Y  &kp Q        &none
-&none  &kp R        &kp S  &kp T      &kp H      &kp B    &kp J  &kp N  &kp A      &kp I  &kp O        &none
-&none  &key_repeat  &kp C  &kp G      &kp D      &none    &none  &kp L  &kp K      &kp V  &key_repeat  &none
-       &none        &none  &kp ENTER  &kp SPACE  &none    &none  &kp E  &kp ENTER  &none  &none
+&none  &kp X        &kp W   &kp M      &kp P      &kp Z     &none   &kp F  &kp U      &kp Y   &kp Q        &none
+&none  &kp R        &kp S   &kp T      &kp H      &kp B     &kp J   &kp N  &kp A      &kp I   &kp O        &none
+&none  &key_repeat  &kp C   &kp G      &kp D      &none     &none   &kp L  &kp K      &kp V   &key_repeat  &none
+       &kp N3       &kp N4  &kp ENTER  &kp SPACE  &kp N1    &kp N2  &kp E  &kp ENTER  &kp N5  &kp N6
             >;
         };
 
