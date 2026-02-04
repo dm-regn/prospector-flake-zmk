@@ -30,3 +30,4 @@ include:
     shield: settings_reset
   - board: seeeduino_xiao_ble
     shield: anywhy_flake_dongle prospector_adapter
+    snippet: zmk-usb-logging
