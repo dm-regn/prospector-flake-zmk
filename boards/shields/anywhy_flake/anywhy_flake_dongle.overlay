@@ -5,6 +5,10 @@
     transform = <&medium_transform>;
 };
 
+&medium_transform {
+    row-offset = <1>;
+};
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
