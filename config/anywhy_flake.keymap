@@ -517,8 +517,8 @@
             >;
         };
 
-        Temp {
-            display-name = "Temp";
+        EOL {
+            display-name = "EOL";
             bindings = <
 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
