@@ -483,6 +483,20 @@
             bindings = <&kp V &kp Y>;
             label = "STNO_VY";
         };
+
+        stno_pd: stno_pd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp D>;
+            label = "STNO_PD";
+        };
+
+        stno_dp: stno_dp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp P>;
+            label = "STNO_DP";
+        };
     };
 
     keymap {
@@ -521,9 +535,9 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none         &stno_fe  &none     &none        &none         &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&none         &stno_fe  &none     &none        &stno_pd      &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
 &cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC    &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
-&none         &none     &stno_cs  &stno_gm     &none         &kp DEL     &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
+&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL     &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
               &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
