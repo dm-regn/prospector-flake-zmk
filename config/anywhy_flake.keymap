@@ -8,42 +8,42 @@
         compatible = "zmk,combos";
 
         L-alt {
-            bindings = <&kp LALT>;
+            bindings = <&sk LALT>;
             key-positions = <13 14>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
         R-alt {
-            bindings = <&kp LALT>;
+            bindings = <&sk LALT>;
             key-positions = <22 21>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
         L-ctrl {
-            bindings = <&kp LCTRL>;
+            bindings = <&sk LCTRL>;
             key-positions = <28 27>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
         R-ctrl {
-            bindings = <&kp LCTRL>;
+            bindings = <&sk LCTRL>;
             key-positions = <31 32>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
         L-shft {
-            bindings = <&kp LSHFT>;
+            bindings = <&sk LSHFT>;
             key-positions = <16 15>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
         R-shft {
-            bindings = <&kp LSHFT>;
+            bindings = <&sk LSHFT>;
             key-positions = <19 20>;
             layers = <0>;
             require-prior-idle-ms = <5>;
@@ -104,6 +104,50 @@
         };
     };
 
+    macros {
+        stno_ve: stno_ve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp E>;
+            label = "STNO_VE";
+        };
+
+        stno_ou: stno_ou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp U>;
+            label = "STNO_OU";
+        };
+
+        stno_ov: stno_ov {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp V>;
+            label = "STNO_OV";
+        };
+
+        stno_sw: stno_sw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp W>;
+            label = "STNO_SW";
+        };
+
+        stno_cs: stno_cs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp S>;
+            label = "STNO_CS";
+        };
+
+        stno_gm: stno_gm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp M>;
+            label = "STNO_GM";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -140,10 +184,10 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-       &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none     &none     &none  &none    &none  &none  &none  &stno_ou  &none     &none
+&none  &none  &stno_sw  &none     &none  &none    &none  &none  &none  &none     &stno_ov  &none
+&none  &none  &stno_cs  &stno_gm  &none  &none    &none  &none  &none  &stno_ve  &none     &none
+       &none  &none     &none     &none  &none    &none  &none  &none  &none     &none
             >;
         };
 
