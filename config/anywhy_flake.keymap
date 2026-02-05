@@ -2,7 +2,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -315,6 +314,20 @@
             bindings = <&kp DQT &kp DQT &kp LEFT>;
             label = "DBL_QTS";
         };
+
+        apos_m: apos_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp M>;
+            label = "APOS_M";
+        };
+
+        stno_vi: stno_vi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp I>;
+            label = "STNO_VI";
+        };
     };
 
     keymap {
@@ -354,7 +367,7 @@
             display-name = "Steno";
             bindings = <
 &none  &none  &none     &none        &none         &none       &none  &none         &none        &stno_ou  &none     &none
-&none  &none  &stno_sw  &none        &none         &kp DEL     &none  &none         &none        &none     &stno_ov  &none
+&none  &none  &stno_sw  &none        &none         &kp DEL     &none  &none         &none        &stno_vi  &stno_ov  &none
 &none  &none  &stno_cs  &stno_gm     &none         &kp BSPC    &none  &none         &none        &stno_ve  &none     &none
        &none  &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none  &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
@@ -363,10 +376,10 @@
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &none     &none    &none     &none            &quotes 0 0     &none              &none    &none     &apos_y   &none  &none
-&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0    &none              &apos_n  &none     &none     &none  &none
-&none  &none     &none    &none     &none            &brk_brc 0 0    &none              &apos_L  &none     &apos_ve  &none  &none
-       &none     &none    &kp PIPE  &mt TILDE UNDER  &none           &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
+&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &none  &none
+&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &none  &none
+&none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &none     &apos_ve  &none  &none
+       &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
             >;
         };
 
