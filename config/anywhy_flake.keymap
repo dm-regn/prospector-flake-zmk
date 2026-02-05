@@ -7,66 +7,53 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_sel_3 {
-            bindings = <&bt3>;
-            key-positions = <42 30>;
+        L-alt {
+            bindings = <&kp LALT>;
+            key-positions = <13 14>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        bt_sel_4 {
-            bindings = <&bt4>;
-            key-positions = <30 18>;
+        R-alt {
+            bindings = <&kp LALT>;
+            key-positions = <22 21>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        enter_gaming {
-            bindings = <&sl 0>;
-            key-positions = <26 15 28>;
+        L-ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <28 27>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        leave_gaming {
-            bindings = <&sl 0>;
-            key-positions = <31 20 33>;
+        R-ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <31 32>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        grave {
-            bindings = <&kp GRAVE>;
-            key-positions = <13 25>;
-        };
-    };
-
-    macros {
-        bt_clr_0: bt_clr_0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &bt BT_CLR>;
-            label = "BT_CLR_0";
+        L-shft {
+            bindings = <&kp LSHFT>;
+            key-positions = <16 15>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        bt_clr_1: bt_clr_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &bt BT_CLR>;
-            label = "BT_CLR_1";
+        R-shft {
+            bindings = <&kp LSHFT>;
+            key-positions = <19 20>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
 
-        bt_clr_2: bt_clr_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &bt BT_CLR>;
-            label = "BT_CLR_2";
-        };
-
-        bt_clr_3: bt_clr_3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &bt BT_CLR>;
-            label = "BT_CLR_3";
-        };
-
-        bt_clr_4: bt_clr_4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4 &bt BT_CLR>;
-            label = "BT_CLR_4";
+        caps {
+            bindings = <&caps_word>;
+            key-positions = <40 41>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
         };
     };
 
@@ -123,30 +110,30 @@
         Alpha {
             display-name = "Alpha";
             bindings = <
-&none  &kp X        &kp W  &kp M      &kp P        &kp Z    &none  &kp F    &kp U      &kp Y  &kp Q        &none
-&sl 4  &kp R        &kp S  &kp T      &kp H        &kp B    &kp J  &kp N    &kp A      &kp I  &kp O        &sl 4
-&none  &key_repeat  &kp C  &kp G      &kp D        &none    &none  &kp L    &kp K      &kp V  &key_repeat  &none
-       &none        &none  &kp ENTER  &lt 1 SPACE  &sl 3    &sl 3  &lt 2 E  &kp ENTER  &none  &none
+&none  &kp X           &kp W  &kp M      &kp P        &kp Z    &none  &kp F    &kp U      &kp Y  &kp Q           &none
+&sl 4  &mt LEFT_GUI R  &kp S  &kp T      &kp H        &kp B    &kp J  &kp N    &kp A      &kp I  &mt LEFT_GUI O  &sl 4
+&none  &key_repeat     &kp C  &kp G      &kp D        &none    &none  &kp L    &kp K      &kp V  &key_repeat     &none
+       &none           &none  &kp ENTER  &lt 1 SPACE  &sl 3    &sl 3  &lt 2 E  &kp ENTER  &none  &none
             >;
         };
 
         Navi {
             display-name = "Navi";
             bindings = <
-&none  &none  &none     &kp UP    &none      &none    &none  &none           &mmv MOVE_UP    &none            &none      &none
-&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &none
-&none  &none  &none     &none     &none      &none    &none  &none           &none           &none            &none      &none
-       &none  &none     &none     &none      &none    &none  &mkp LCLK       &none           &none            &none
+&none            &none            &none            &kp UP           &none      &none    &none  &none           &mmv MOVE_UP    &none            &none      &none
+&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT  &none    &none  &none           &none           &none            &none      &none
+                 &none            &none            &none            &none      &none    &none  &mkp LCLK       &none           &none            &none
             >;
         };
 
         Num+Sym {
             display-name = "Num+Sym";
             bindings = <
-&none      &none        &kp N5  &kp N3  &kp N4  &kp PERCENT    &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
-&kp EQUAL  &key_repeat  &kp N0  &kp N1  &kp N2  &kp N7         &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
-&none      &none        &kp N9  &kp N8  &kp N6  &kp DLLR       &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
-           &none        &none   &trans  &trans  &kp DOT        &none  &none                    &none                     &none                        &none
+&none      &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp N5  &kp N3  &kp N4  &kp PERCENT    &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
+&kp EQUAL  &key_repeat                     &kp N0  &kp N1  &kp N2  &kp N7         &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
+&none      &none                           &kp N9  &kp N8  &kp N6  &kp DLLR       &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
+           &none                           &none   &trans  &trans  &kp DOT        &none  &none                    &none                     &none                        &none
             >;
         };
 
