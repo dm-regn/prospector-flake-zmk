@@ -470,11 +470,18 @@
             label = "STNO_OJ";
         };
 
-        terminal: terminal {
+        stno_ky: stno_ky {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LGUI &kp R>;
-            label = "TERMINAL";
+            bindings = <&kp K &kp Y>;
+            label = "STNO_KY";
+        };
+
+        stno_vy: stno_vy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp Y>;
+            label = "STNO_VY";
         };
     };
 
@@ -526,7 +533,7 @@
             bindings = <
 &none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &stno_oj  &none
 &none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &stno_vo  &none
-&none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &none     &apos_ve  &none     &none
+&none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
        &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
             >;
         };
