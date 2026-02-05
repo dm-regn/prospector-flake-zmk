@@ -10,42 +10,42 @@
     combos {
         compatible = "zmk,combos";
 
-        L-alt {
+        L_alt {
             bindings = <&sk LALT>;
             key-positions = <13 14>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
-        R-alt {
+        R_alt {
             bindings = <&sk LALT>;
             key-positions = <22 21>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
-        L-ctrl {
+        L_ctrl {
             bindings = <&sk LCTRL>;
             key-positions = <28 27>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
-        R-ctrl {
+        R_ctrl {
             bindings = <&sk LCTRL>;
             key-positions = <31 32>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
-        L-shft {
+        L_shft {
             bindings = <&sk LSHFT>;
             key-positions = <16 15>;
             layers = <0>;
             require-prior-idle-ms = <5>;
         };
 
-        R-shft {
+        R_shft {
             bindings = <&sk LSHFT>;
             key-positions = <19 20>;
             layers = <0>;
