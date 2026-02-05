@@ -328,6 +328,20 @@
             bindings = <&kp V &kp I>;
             label = "STNO_VI";
         };
+
+        stno_fl: stno_fl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp L>;
+            label = "STNO_FL";
+        };
+
+        stno_lf: stno_lf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp F>;
+            label = "STNO_LF";
+        };
     };
 
     keymap {
@@ -336,10 +350,10 @@
         Alpha {
             display-name = "Alpha";
             bindings = <
-&none  &kp X           &kp W  &kp M      &mt PSCRN P  &kp Z    &none  &kp F    &kp U      &kp Y  &kp Q           &none
-&sl 4  &mt LEFT_GUI R  &kp S  &kp T      &kp H        &kp B    &kp J  &kp N    &kp A      &kp I  &mt LEFT_GUI O  &sl 4
-&none  &key_repeat     &kp C  &kp G      &kp D        &none    &none  &kp L    &kp K      &kp V  &key_repeat     &none
-       &none           &none  &kp ENTER  &lt 1 SPACE  &sl 3    &sl 3  &lt 2 E  &kp ENTER  &none  &none
+&none       &kp X           &kp W  &kp M      &mt PSCRN P  &kp Z      &none  &kp F    &kp U      &kp Y  &kp Q           &none
+&sl 4       &mt LEFT_GUI R  &kp S  &kp T      &kp H        &kp B      &kp J  &kp N    &kp A      &kp I  &mt LEFT_GUI O  &sl 4
+&mt F4 ESC  &key_repeat     &kp C  &kp G      &kp D        &kp TAB    &none  &kp L    &kp K      &kp V  &key_repeat     &none
+            &none           &none  &kp ENTER  &lt 1 SPACE  &sl 3      &sl 3  &lt 2 E  &kp ENTER  &none  &none
             >;
         };
 
