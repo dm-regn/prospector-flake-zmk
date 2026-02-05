@@ -5,6 +5,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mt {
+    tapping-term-ms = <220>;
+    flavor = "tap-preferred";
+};
+
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE MINUS N0 N1 N2 N3 N4 N5 N6 N7 N8 N9 PLUS>; };
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -342,6 +349,20 @@
             bindings = <&kp L &kp F>;
             label = "STNO_LF";
         };
+
+        stno_gt: stno_gt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp T>;
+            label = "STNO_GT";
+        };
+
+        stno_au: stno_ua {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp U>;
+            label = "STNO_UA";
+        };
     };
 
     keymap {
@@ -380,9 +401,9 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none  &none  &none     &none        &none         &none       &none  &none         &none        &stno_ou  &none     &none
-&none  &none  &stno_sw  &none        &none         &kp DEL     &none  &none         &none        &stno_vi  &stno_ov  &none
-&none  &none  &stno_cs  &stno_gm     &none         &kp BSPC    &none  &none         &none        &stno_ve  &none     &none
+&none  &none  &none     &none        &none         &none       &none  &stno_fl      &none        &stno_ou  &none     &none
+&none  &none  &stno_sw  &stno_gt     &none         &kp DEL     &none  &none         &stno_au     &stno_vi  &stno_ov  &none
+&none  &none  &stno_cs  &stno_gm     &none         &kp BSPC    &none  &stno_lf      &none        &stno_ve  &none     &none
        &none  &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none  &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
