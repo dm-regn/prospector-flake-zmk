@@ -142,6 +142,16 @@
             tapping-term-ms = <180>;
             flavor = "tap-preferred";
         };
+
+        cma_prd: cma_prd {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CMA_PRD";
+            bindings = <&period>, <&comma>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -424,6 +434,34 @@
             bindings = <&kp J &kp O>;
             label = "STNO_JO";
         };
+
+        period: period {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+            label = "PERIOD";
+        };
+
+        comma: comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA &kp SPACE>;
+            label = "COMMA";
+        };
+
+        semi: semi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI &kp SPACE>;
+            label = "SEMI";
+        };
+
+        stno_vo: stno_vo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp O>;
+            label = "STNO_VO";
+        };
     };
 
     keymap {
@@ -462,19 +500,19 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none  &stno_fe  &none     &none        &none         &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
-&none  &stno_ef  &stno_sw  &stno_gt     &none         &kp DEL     &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &none
-&none  &none     &stno_cs  &stno_gm     &none         &kp BSPC    &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
-       &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+&none         &stno_fe  &none     &none        &none         &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp DEL     &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
+&none         &none     &stno_cs  &stno_gm     &none         &kp BSPC    &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
+              &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
 
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &none  &none
-&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &none  &none
-&none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &none     &apos_ve  &none  &none
+&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &none     &none
+&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &stno_vo  &none
+&none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &none     &apos_ve  &none     &none
        &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
             >;
         };
