@@ -209,6 +209,83 @@
             bindings = <&kp N &kp SQT>;
             label = "APOS_N";
         };
+
+        year: year {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N2 &kp N0 &kp N2 &kp N6>;
+            label = "YEAR";
+        };
+
+        fast_AD: fast_AD {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E &kp L &kp L &kp O &kp N &kp DOT &kp M &kp O &kp Y>;
+            label = "FAST_AD";
+        };
+
+        fast_Sad: fast_Sad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp DOT &kp D &kp E &kp L &kp L &kp O &kp N &kp DOT &kp M &kp O &kp Y>;
+            label = "FAST_SAD";
+        };
+
+        fast_1st: fast_1st {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E &kp L &kp L &kp O &kp N>;
+            label = "FAST_1ST";
+        };
+
+        fast_id: fast_id {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N5 &kp N6 &kp N4 &kp N1 &kp N5 &kp LS(D) &kp LS(M)>;
+            label = "FAST_ID";
+        };
+
+        apos_c: apos_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp SQT>;
+            label = "APOS_C";
+        };
+
+        fast_na: fast_na {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N) &kp FSLH &kp LS(A)>;
+            label = "FAST_NA";
+        };
+
+        PARS: PARS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PARS";
+        };
+
+        CHVS: CHVS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+            label = "CHVS";
+        };
+
+        BRKTS: BRKTS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "BRKTS";
+        };
+
+        BRCS: BRCS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "BRCS";
+        };
     };
 
     keymap {
