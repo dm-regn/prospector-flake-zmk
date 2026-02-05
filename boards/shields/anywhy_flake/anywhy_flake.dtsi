@@ -6,18 +6,18 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Top Row
-            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Bottom Row
+            = <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Top Row (PM 21)
+            , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1 (PM 9)
+            , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2 (PM 8)
+            , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Bottom Row (PM 7)
             ;
         col-gpios
-            = <&pro_micro 19 GPIO_ACTIVE_HIGH> // Inner Column
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH> // Outer Column
+            = <&xiao_d 5 GPIO_ACTIVE_HIGH> // Inner (PM 19)
+            , <&xiao_d 4 GPIO_ACTIVE_HIGH> // PM 18
+            , <&xiao_d 2 GPIO_ACTIVE_HIGH> // PM 15
+            , <&xiao_d 1 GPIO_ACTIVE_HIGH> // PM 14
+            , <&xiao_d 0 GPIO_ACTIVE_HIGH> // PM 16
+            , <&xiao_d 6 GPIO_ACTIVE_HIGH> // Outer (PM 10)
             ;
         wakeup-source;
     };
