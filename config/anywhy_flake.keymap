@@ -146,6 +146,69 @@
             bindings = <&kp G &kp M>;
             label = "STNO_GM";
         };
+
+        apos_s: apos_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp S>;
+            label = "APOS_S";
+        };
+
+        apos_t: apos_t {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp T>;
+            label = "APOS_T";
+        };
+
+        apos_d: apos_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp D>;
+            label = "APOS_D";
+        };
+
+        apos_L: apos_L {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp L &kp L>;
+            label = "APOS_L";
+        };
+
+        dbl_mclk: dbl_mclk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &mkp LCLK>;
+            label = "DBL_MCLK";
+        };
+
+        apos_re: apo_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp R &kp E>;
+            label = "APO_R";
+        };
+
+        apos_ve: apos_ve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp V &kp E>;
+            label = "APOS_VE";
+        };
+
+        apos_y: apos_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Y &kp SQT>;
+            label = "APOS_Y";
+        };
+
+        apos_n: apos_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp SQT>;
+            label = "APOS_N";
+        };
     };
 
     keymap {
@@ -164,10 +227,10 @@
         Navi {
             display-name = "Navi";
             bindings = <
-&none            &none            &none            &kp UP           &none      &none    &none  &none           &mmv MOVE_UP    &none            &none      &none
-&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
-&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT  &none    &none  &none           &none           &none            &none      &none
-                 &none            &none            &none            &none      &none    &none  &mkp LCLK       &none           &none            &none
+&none            &none            &none            &kp UP           &none      &none    &none      &none           &mmv MOVE_UP    &none            &none      &none
+&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT  &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT  &none    &none      &none           &none           &none            &none      &none
+                 &none            &none            &none            &none      &none    &dbl_mclk  &mkp LCLK       &none           &none            &none
             >;
         };
 
@@ -194,10 +257,10 @@
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &none  &none  &none  &none            &none    &none              &none   &none  &none  &none  &none
-&none  &none  &none  &none  &none            &none    &none              &none   &none  &none  &none  &none
-&none  &none  &none  &none  &none            &none    &none              &none   &none  &none  &none  &none
-       &none  &none  &none  &mt TILDE UNDER  &none    &mt QUESTION EXCL  &kp AT  &none  &none  &none
+&none  &none     &none    &none    &none            &none    &none              &none    &none  &apos_y   &none  &none
+&none  &apos_re  &apos_s  &apos_t  &none            &none    &none              &apos_n  &none  &none     &none  &none
+&none  &none     &none    &none    &none            &none    &none              &apos_L  &none  &apos_ve  &none  &none
+       &none     &none    &none    &mt TILDE UNDER  &none    &mt QUESTION EXCL  &kp AT   &none  &none     &none
             >;
         };
 
