@@ -469,6 +469,13 @@
             bindings = <&kp O &kp J>;
             label = "STNO_OJ";
         };
+
+        terminal: terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LGUI &kp R>;
+            label = "TERMINAL";
+        };
     };
 
     keymap {
