@@ -375,6 +375,48 @@
             bindings = <&kp A &kp U>;
             label = "STNO_UA";
         };
+
+        stno_ef: stno_ef {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp F>;
+            label = "STNO_EF";
+        };
+
+        stno_fe: stno_fe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp E>;
+            label = "STNO_FE";
+        };
+
+        stno_ka: stno_ka {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp A>;
+            label = "STNO_KA";
+        };
+
+        stno_lu: stno_lu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp U>;
+            label = "STNO_LU";
+        };
+
+        stno_eq: stno_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp Q>;
+            label = "STNO_EQ";
+        };
+
+        stno_jo: stno_jo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp J &kp O>;
+            label = "STNO_JO";
+        };
     };
 
     keymap {
@@ -383,8 +425,8 @@
         Alpha {
             display-name = "Alpha";
             bindings = <
-&act_dir 0 0  &kp X           &kp W  &kp M       &mt PSCRN P  &kp Z      &none  &kp F    &kp U            &kp Y         &kp Q           &none
-&sl 4         &mt LEFT_GUI R  &kp S  &kp T       &kp H        &kp B      &kp J  &kp N    &kp A            &kp I         &mt LEFT_GUI O  &sl 4
+&act_dir 0 0  &kp X           &kp W  &kp M       &mt PSCRN P  &kp Z      &none  &kp F    &kp U            &kp Y         &kp J           &none
+&sl 4         &mt LEFT_GUI R  &kp S  &kp T       &kp H        &kp B      &kp Q  &kp N    &kp A            &kp I         &mt LEFT_GUI O  &sl 4
 &kp ENTER     &key_repeat     &kp C  &kp G       &kp D        &kp TAB    &none  &kp L    &kp K            &kp V         &key_repeat     &kp ENTER
               &to 1           &to 2  &mt F4 ESC  &lt 1 SPACE  &sl 3      &sl 3  &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
             >;
@@ -413,10 +455,10 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none  &none  &none     &none        &none         &none       &none  &stno_fl      &none        &stno_ou  &none     &none
-&none  &none  &stno_sw  &stno_gt     &none         &kp DEL     &none  &none         &stno_au     &stno_vi  &stno_ov  &none
-&none  &none  &stno_cs  &stno_gm     &none         &kp BSPC    &none  &stno_lf      &none        &stno_ve  &none     &none
-       &none  &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none  &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+&none  &stno_fe  &none     &none        &none         &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&none  &stno_ef  &stno_sw  &stno_gt     &none         &kp DEL     &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &none
+&none  &none     &stno_cs  &stno_gm     &none         &kp BSPC    &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
+       &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
 
