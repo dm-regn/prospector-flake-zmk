@@ -462,6 +462,13 @@
             bindings = <&kp V &kp O>;
             label = "STNO_VO";
         };
+
+        stno_oj: stno_oj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp J>;
+            label = "STNO_OJ";
+        };
     };
 
     keymap {
@@ -482,7 +489,7 @@
             bindings = <
 &kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &year          &none      &none           &mmv MOVE_UP    &none            &none      &none
 &sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &fast_na       &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
-&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT      &id_1st 0 0    &none      &none           &none           &none            &none      &none
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT      &id_1st 0 0    &none      &sk LSHFT       &none           &none            &none      &none
                  &to 1            &to 0            &none            &none          &none          &dbl_mclk  &mkp LCLK       &none           &none            &none
             >;
         };
@@ -490,10 +497,10 @@
         Num+Sym {
             display-name = "Num+Sym";
             bindings = <
-&none   &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp N5  &kp N3  &kp N4  &kp PERCENT    &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
-&none   &key_repeat                     &kp N0  &kp N1  &kp N2  &kp N7         &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
-&trans  &kp EQUAL                       &kp N9  &kp N8  &kp N6  &kp DLLR       &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
-        &none                           &to 0   &none   &trans  &kp DOT        &none  &none                    &none                     &none                        &none
+&none   &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp N5  &kp N3  &kp N4  &kp PERCENT         &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
+&none   &key_repeat                     &kp N0  &kp N1  &kp N2  &kp N7              &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
+&trans  &kp EQUAL                       &kp N9  &kp N8  &kp N6  &kp DLLR            &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
+        &none                           &to 0   &none   &trans  &mt COMMA PERIOD    &none  &none                    &none                     &none                        &none
             >;
         };
 
@@ -501,8 +508,8 @@
             display-name = "Steno";
             bindings = <
 &none         &stno_fe  &none     &none        &none         &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
-&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp DEL     &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
-&none         &none     &stno_cs  &stno_gm     &none         &kp BSPC    &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
+&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC    &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
+&none         &none     &stno_cs  &stno_gm     &none         &kp DEL     &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
               &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
@@ -510,7 +517,7 @@
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &none     &none
+&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &stno_oj  &none
 &none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &stno_vo  &none
 &none  &none     &none    &none     &none            &brk_brc 0 0                      &none              &apos_L  &none     &apos_ve  &none     &none
        &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
