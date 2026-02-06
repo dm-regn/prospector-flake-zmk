@@ -200,28 +200,28 @@
         apos_s: apos_s {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp S>;
+            bindings = <&kp SQT &kp S &kp SPACE>;
             label = "APOS_S";
         };
 
         apos_t: apos_t {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp T>;
+            bindings = <&kp SQT &kp T &kp SPACE>;
             label = "APOS_T";
         };
 
         apos_d: apos_d {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp D>;
+            bindings = <&kp SQT &kp D &kp SPACE>;
             label = "APOS_D";
         };
 
         apos_L: apos_L {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp L &kp L>;
+            bindings = <&kp SQT &kp L &kp L &kp SPACE>;
             label = "APOS_L";
         };
 
@@ -235,14 +235,14 @@
         apos_re: apo_r {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp R &kp E>;
+            bindings = <&kp SQT &kp R &kp E &kp SPACE>;
             label = "APO_R";
         };
 
         apos_ve: apos_ve {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp V &kp E>;
+            bindings = <&kp SQT &kp V &kp E &kp SPACE>;
             label = "APOS_VE";
         };
 
@@ -354,7 +354,7 @@
         apos_m: apos_m {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp M>;
+            bindings = <&kp SQT &kp M &kp SPACE>;
             label = "APOS_M";
         };
 
@@ -497,6 +497,13 @@
             bindings = <&kp D &kp P>;
             label = "STNO_DP";
         };
+
+        stno_ke: stno_ke {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp E>;
+            label = "STNO_KE";
+        };
     };
 
     keymap {
@@ -537,7 +544,7 @@
             bindings = <
 &none         &stno_fe  &none     &none        &stno_pd      &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
 &cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC    &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
-&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL     &none     &stno_lf      &stno_ka     &stno_ve  &none     &none
+&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL     &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
               &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
@@ -546,7 +553,7 @@
             display-name = "Quick";
             bindings = <
 &none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &stno_oj  &none
-&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &none     &none     &stno_vo  &none
+&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &stno_ka  &none     &stno_vo  &none
 &none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
        &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
             >;
