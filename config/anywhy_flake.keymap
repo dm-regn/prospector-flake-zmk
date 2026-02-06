@@ -1,0 +1,572 @@
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+&mt {
+    tapping-term-ms = <220>;
+    flavor = "tap-preferred";
+};
+
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE MINUS N0 N1 N2 N3 N4 N5 N6 N7 N8 N9 PLUS>; };
+
+&lt { tapping-term-ms = <220>; };
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        L_alt {
+            bindings = <&sk LALT>;
+            key-positions = <13 14>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        R_alt {
+            bindings = <&sk LALT>;
+            key-positions = <22 21>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        L_ctrl {
+            bindings = <&sk LCTRL>;
+            key-positions = <28 27>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        R_ctrl {
+            bindings = <&sk LCTRL>;
+            key-positions = <31 32>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        L_shft {
+            bindings = <&sk LSHFT>;
+            key-positions = <16 15>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        R_shft {
+            bindings = <&sk LSHFT>;
+            key-positions = <19 20>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        caps {
+            bindings = <&caps_word>;
+            key-positions = <40 41>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        print {
+            bindings = <&kp LC(P)>;
+            key-positions = <4 5>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
+
+        zoom_0 {
+            bindings = <&kp LC(N0)>;
+            key-positions = <0 1>;
+            require-prior-idle-ms = <5>;
+            layers = <1>;
+        };
+
+        mute {
+            bindings = <&kp C_MUTE>;
+            key-positions = <45 44>;
+        };
+
+        L_shft_ent {
+            bindings = <&kp LS(ENTER)>;
+            key-positions = <24 25>;
+        };
+    };
+
+    behaviors {
+        act_dir: act_dir {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ACT_DIR";
+            bindings = <&fast_Sad>, <&fast_AD>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+        };
+
+        id_1st: id_1st {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ID_1ST";
+            bindings = <&fast_id>, <&fast_1st>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+        };
+
+        quotes: quotes {
+            compatible = "zmk,behavior-hold-tap";
+            label = "QUOTES";
+            bindings = <&dbl_qts>, <&sngl_qts>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <179>;
+            flavor = "tap-preferred";
+        };
+
+        par_chv: par_chv {
+            compatible = "zmk,behavior-hold-tap";
+            label = "PAR_CHV";
+            bindings = <&CHVS>, <&PARS>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <179>;
+            flavor = "tap-preferred";
+        };
+
+        brk_brc: brk_brc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BRK_BRC";
+            bindings = <&BRCS>, <&BRKTS>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            flavor = "tap-preferred";
+        };
+
+        cma_prd: cma_prd {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CMA_PRD";
+            bindings = <&period>, <&comma>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "tap-preferred";
+        };
+    };
+
+    macros {
+        stno_ve: stno_ve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp E>;
+            label = "STNO_VE";
+        };
+
+        stno_ou: stno_ou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp U>;
+            label = "STNO_OU";
+        };
+
+        stno_ov: stno_ov {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp V>;
+            label = "STNO_OV";
+        };
+
+        stno_sw: stno_sw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp W>;
+            label = "STNO_SW";
+        };
+
+        stno_cs: stno_cs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp S>;
+            label = "STNO_CS";
+        };
+
+        stno_gm: stno_gm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp M>;
+            label = "STNO_GM";
+        };
+
+        apos_s: apos_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp S &kp SPACE>;
+            label = "APOS_S";
+        };
+
+        apos_t: apos_t {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp T &kp SPACE>;
+            label = "APOS_T";
+        };
+
+        apos_d: apos_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp D &kp SPACE>;
+            label = "APOS_D";
+        };
+
+        apos_L: apos_L {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp L &kp L &kp SPACE>;
+            label = "APOS_L";
+        };
+
+        dbl_mclk: dbl_mclk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &mkp LCLK>;
+            label = "DBL_MCLK";
+        };
+
+        apos_re: apo_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp R &kp E &kp SPACE>;
+            label = "APO_R";
+        };
+
+        apos_ve: apos_ve {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp V &kp E &kp SPACE>;
+            label = "APOS_VE";
+        };
+
+        apos_y: apos_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Y &kp SQT>;
+            label = "APOS_Y";
+        };
+
+        apos_n: apos_n {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp SQT>;
+            label = "APOS_N";
+        };
+
+        year: year {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N2 &kp N0 &kp N2 &kp N6>;
+            label = "YEAR";
+        };
+
+        fast_AD: fast_AD {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E &kp L &kp L &kp O &kp N &kp DOT &kp M &kp O &kp Y>;
+            label = "FAST_AD";
+        };
+
+        fast_Sad: fast_Sad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp DOT &kp D &kp E &kp L &kp L &kp O &kp N &kp DOT &kp M &kp O &kp Y>;
+            label = "FAST_SAD";
+        };
+
+        fast_1st: fast_1st {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E &kp L &kp L &kp O &kp N>;
+            label = "FAST_1ST";
+        };
+
+        fast_id: fast_id {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N5 &kp N6 &kp N4 &kp N1 &kp N5 &kp LS(D) &kp LS(M)>;
+            label = "FAST_ID";
+        };
+
+        apos_c: apos_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp SQT>;
+            label = "APOS_C";
+        };
+
+        fast_na: fast_na {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N) &kp FSLH &kp LS(A)>;
+            label = "FAST_NA";
+        };
+
+        PARS: PARS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PARS";
+        };
+
+        CHVS: CHVS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+            label = "CHVS";
+        };
+
+        BRKTS: BRKTS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "BRKTS";
+        };
+
+        BRCS: BRCS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "BRCS";
+        };
+
+        sngl_qts: sngl_qts {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
+            label = "SNGL_QTS";
+        };
+
+        dbl_qts: dbl_qts {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp DQT &kp LEFT>;
+            label = "DBL_QTS";
+        };
+
+        apos_m: apos_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp M &kp SPACE>;
+            label = "APOS_M";
+        };
+
+        stno_vi: stno_vi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp I>;
+            label = "STNO_VI";
+        };
+
+        stno_fl: stno_fl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp L>;
+            label = "STNO_FL";
+        };
+
+        stno_lf: stno_lf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp F>;
+            label = "STNO_LF";
+        };
+
+        stno_gt: stno_gt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp T>;
+            label = "STNO_GT";
+        };
+
+        stno_au: stno_ua {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp U>;
+            label = "STNO_UA";
+        };
+
+        stno_ef: stno_ef {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp F>;
+            label = "STNO_EF";
+        };
+
+        stno_fe: stno_fe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F &kp E>;
+            label = "STNO_FE";
+        };
+
+        stno_ka: stno_ka {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp A>;
+            label = "STNO_KA";
+        };
+
+        stno_lu: stno_lu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp L &kp U>;
+            label = "STNO_LU";
+        };
+
+        stno_eq: stno_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp Q>;
+            label = "STNO_EQ";
+        };
+
+        stno_jo: stno_jo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp J &kp O>;
+            label = "STNO_JO";
+        };
+
+        period: period {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+            label = "PERIOD";
+        };
+
+        comma: comma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA &kp SPACE>;
+            label = "COMMA";
+        };
+
+        semi: semi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI &kp SPACE>;
+            label = "SEMI";
+        };
+
+        stno_vo: stno_vo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp O>;
+            label = "STNO_VO";
+        };
+
+        stno_oj: stno_oj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp J>;
+            label = "STNO_OJ";
+        };
+
+        stno_ky: stno_ky {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp Y>;
+            label = "STNO_KY";
+        };
+
+        stno_vy: stno_vy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp Y>;
+            label = "STNO_VY";
+        };
+
+        stno_pd: stno_pd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp D>;
+            label = "STNO_PD";
+        };
+
+        stno_dp: stno_dp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp P>;
+            label = "STNO_DP";
+        };
+
+        stno_ke: stno_ke {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp E>;
+            label = "STNO_KE";
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        Alpha {
+            display-name = "Alpha";
+            bindings = <
+&act_dir 0 0  &kp X        &kp W  &kp M       &mt PSCRN P  &kp Z              &none     &kp F    &kp U            &kp Y         &kp J         &none
+&sl 4         &kp R        &kp S  &kp T       &kp H        &kp B              &kp Q     &kp N    &kp A            &kp I         &kp O         &sl 4
+&kp ENTER     &key_repeat  &kp C  &kp G       &kp D        &mt LG(TAB) TAB    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
+              &to 1        &to 2  &mt F4 ESC  &lt 1 SPACE  &sl 3              &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
+            >;
+        };
+
+        Navi {
+            display-name = "Navi";
+            bindings = <
+&kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &year          &none      &none           &mmv MOVE_UP    &none            &none      &none
+&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &fast_na       &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT      &id_1st 0 0    &none      &sk LSHFT       &none           &none            &none      &none
+                 &to 1            &to 0            &none            &none          &none          &dbl_mclk  &mkp LCLK       &none           &none            &none
+            >;
+        };
+
+        Num+Sym {
+            display-name = "Num+Sym";
+            bindings = <
+&none   &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp N5  &kp N3  &kp N4  &kp PERCENT         &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
+&none   &key_repeat                     &kp N0  &kp N1  &kp N2  &kp N7              &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
+&trans  &kp EQUAL                       &kp N9  &kp N8  &kp N6  &kp DLLR            &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
+        &none                           &to 0   &none   &trans  &mt COMMA PERIOD    &none  &none                    &none                     &none                        &none
+            >;
+        };
+
+        Steno {
+            display-name = "Steno";
+            bindings = <
+&none         &stno_fe  &none     &none        &stno_pd      &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC    &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
+&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL     &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
+              &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+            >;
+        };
+
+        Quick {
+            display-name = "Quick";
+            bindings = <
+&none  &none     &none    &apos_m   &none            &quotes 0 0                       &none              &none    &none     &apos_y   &stno_oj  &none
+&none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &stno_ka  &none     &stno_vo  &none
+&none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
+       &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
+            >;
+        };
+
+        EOL {
+            display-name = "EOL";
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+       &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+            >;
+        };
+    };
+};
