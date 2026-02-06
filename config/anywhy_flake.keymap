@@ -90,6 +90,18 @@
             bindings = <&kp LS(ENTER)>;
             key-positions = <24 25>;
         };
+
+        R_shft_ent {
+            bindings = <&kp LS(ENTER)>;
+            key-positions = <34 35>;
+        };
+
+        play_pause {
+            bindings = <&kp C_PLAY_PAUSE>;
+            key-positions = <10 11>;
+            layers = <1>;
+            require-prior-idle-ms = <5>;
+        };
     };
 
     behaviors {
@@ -504,6 +516,13 @@
             bindings = <&kp K &kp E>;
             label = "STNO_KE";
         };
+
+        trpl_mclk: trpl_mclk {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &mkp LCLK &mkp LCLK>;
+            label = "TRPL_MCLK";
+        };
     };
 
     keymap {
@@ -512,20 +531,20 @@
         Alpha {
             display-name = "Alpha";
             bindings = <
-&act_dir 0 0  &kp X        &kp W  &kp M       &mt PSCRN P  &kp Z              &none     &kp F    &kp U            &kp Y         &kp J         &none
-&sl 4         &kp R        &kp S  &kp T       &kp H        &kp B              &kp Q     &kp N    &kp A            &kp I         &kp O         &sl 4
-&kp ENTER     &key_repeat  &kp C  &kp G       &kp D        &mt LG(TAB) TAB    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
-              &to 1        &to 2  &mt F4 ESC  &lt 1 SPACE  &sl 3              &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
+&act_dir 0 0  &kp X        &kp W  &kp M            &mt PSCRN P  &kp Z         &none     &kp F    &kp U            &kp Y         &kp J         &none
+&sl 4         &kp R        &kp S  &kp T            &kp H        &kp B         &kp Q     &kp N    &kp A            &kp I         &kp O         &sl 4
+&kp ENTER     &key_repeat  &kp C  &kp G            &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
+              &to 1        &to 2  &mt LG(TAB) TAB  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
             >;
         };
 
         Navi {
             display-name = "Navi";
             bindings = <
-&kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &year          &none      &none           &mmv MOVE_UP    &none            &none      &none
-&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &fast_na       &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK  &sk LCTRL
-&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LG(V) LC(V)  &mt LC(X) LC(C)  &sk LSHFT      &id_1st 0 0    &none      &sk LSHFT       &none           &none            &none      &none
-                 &to 1            &to 0            &none            &none          &none          &dbl_mclk  &mkp LCLK       &none           &none            &none
+&kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &none    &none      &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp C_PREV       &kp C_NEXT
+&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK        &sk LCTRL
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LC(X) LC(C)  &mt LG(V) LC(V)  &sk LSHFT      &none    &none      &sk LSHFT       &none           &msc SCRL_LEFT   &msc SCRL_RIGHT  &none
+                 &to 1            &to 0            &none            &none          &none    &dbl_mclk  &mkp LCLK       &trpl_mclk      &none            &none
             >;
         };
 
@@ -535,17 +554,17 @@
 &none   &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp N5  &kp N3  &kp N4  &kp PERCENT         &none  &kp BSLH                 &kp HASH                  &kp CARET                    &kp GRAVE                      &none
 &none   &key_repeat                     &kp N0  &kp N1  &kp N2  &kp N7              &none  &kp ASTRK                &kp FSLH                  &kp PLUS                     &kp MINUS                      &mt COLON SEMI
 &trans  &kp EQUAL                       &kp N9  &kp N8  &kp N6  &kp DLLR            &none  &mt LT LEFT_PARENTHESIS  &mt GT RIGHT_PARENTHESIS  &mt LEFT_BRACE LEFT_BRACKET  &mt RIGHT_BRACE RIGHT_BRACKET  &none
-        &none                           &to 0   &none   &trans  &mt COMMA PERIOD    &none  &none                    &none                     &none                        &none
+        &to 5                           &to 0   &none   &trans  &mt COMMA PERIOD    &none  &none                    &none                     &none                        &none
             >;
         };
 
         Steno {
             display-name = "Steno";
             bindings = <
-&none         &stno_fe  &none     &none        &stno_pd      &none       &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
-&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC    &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
-&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL     &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
-              &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none       &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+&none         &stno_fe  &year     &fast_na     &stno_pd      &id_1st 0 0    &none     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC       &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
+&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
+              &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
 
@@ -556,6 +575,16 @@
 &none  &apos_re  &apos_s  &apos_t   &none            &par_chv 0 0                      &none              &apos_n  &stno_ka  &none     &stno_vo  &none
 &none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
        &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
+            >;
+        };
+
+        GAMING {
+            display-name = "GAMING";
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+       &none  &to 0  &none  &none  &none    &none  &none  &none  &none  &none
             >;
         };
 
