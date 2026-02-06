@@ -561,9 +561,9 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none         &stno_fe  &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
+&none         &none     &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4     &stno_fl      &stno_lu     &stno_ou  &stno_jo  &none
 &cma_prd 0 0  &stno_ef  &stno_sw  &stno_gt     &none         &kp BSPC       &stno_eq  &none         &stno_au     &stno_vi  &stno_ov  &semi
-&none         &none     &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
+&none         &stno_fe  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &none     &none
               &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
