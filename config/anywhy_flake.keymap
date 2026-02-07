@@ -446,18 +446,11 @@
             label = "STNO_LU";
         };
 
-        stno_eq: stno_eq {
+        stno_je: stno_je {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp E &kp Q>;
-            label = "STNO_EQ";
-        };
-
-        stno_jo: stno_jo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp J &kp O>;
-            label = "STNO_JO";
+            bindings = <&kp J &kp E>;
+            label = "STNO_JE";
         };
 
         period: period {
@@ -486,13 +479,6 @@
             #binding-cells = <0>;
             bindings = <&kp V &kp O>;
             label = "STNO_VO";
-        };
-
-        stno_oj: stno_oj {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp O &kp J>;
-            label = "STNO_OJ";
         };
 
         stno_ky: stno_ky {
@@ -593,8 +579,8 @@
         Alpha {
             display-name = "Alpha";
             bindings = <
-&act_dir 0 0  &kp B        &kp W  &kp M            &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp J         &to 6
-&sl 4         &kp R        &kp S  &kp T            &kp H        &kp X         &kp Q     &kp N    &kp A            &kp I         &kp O         &sl 4
+&act_dir 0 0  &kp B        &kp W  &kp M            &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp Q         &to 6
+&sl 4         &kp R        &kp S  &kp T            &kp H        &kp X         &kp J     &kp N    &kp A            &kp I         &kp O         &sl 4
 &kp ENTER     &key_repeat  &kp C  &kp G            &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
               &to 1        &to 2  &mt LG(TAB) TAB  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
             >;
@@ -623,17 +609,17 @@
         Steno {
             display-name = "Steno";
             bindings = <
-&none         &stno_br  &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4     &stno_fl      &stno_lu     &stno_ou  &stno_jo   &to 2
-&cma_prd 0 0  &stno_fe  &stno_sw  &stno_gt     &stno_gh      &kp BSPC       &stno_eq  &none         &stno_au     &stno_vi  &stno_ov   &semi
-&kp PERIOD    &stno_ef  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &stno_eve  &none
-              &none     &to 0     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+&none         &stno_br  &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4  &stno_fl      &stno_lu     &stno_ou  &none      &to 2
+&cma_prd 0 0  &stno_fe  &stno_sw  &stno_gt     &stno_gh      &kp BSPC       &none  &none         &stno_au     &stno_vi  &stno_ov   &semi
+&kp PERIOD    &stno_ef  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none  &stno_lf      &stno_ke     &stno_ve  &stno_eve  &none
+              &none     &to 0     &kp LC(DEL)  &kp LC(BSPC)  &none          &none  &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
 
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &stno_rb  &none    &apos_m   &none            &quotes 0 0                       &to 5              &none    &none     &apos_y   &stno_oj  &to 3
+&none  &stno_rb  &none    &apos_m   &none            &quotes 0 0                       &to 5              &none    &none     &apos_y   &none     &to 3
 &none  &apos_re  &apos_s  &apos_t   &stno_ph         &par_chv 0 0                      &none              &apos_n  &stno_ka  &stno_Le  &stno_vo  &none
 &none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
        &none     &to 0    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
