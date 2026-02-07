@@ -561,7 +561,7 @@
         stno_br: stno_br {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp R &kp B>;
+            bindings = <&kp B &kp R>;
             label = "STNO_BR";
         };
 
