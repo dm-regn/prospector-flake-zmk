@@ -598,7 +598,7 @@
 &none         &none     &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4     &stno_fl      &stno_lu     &stno_ou  &stno_jo   &to 2
 &cma_prd 0 0  &stno_fe  &stno_sw  &stno_gt     &stno_gh      &kp BSPC       &stno_eq  &none         &stno_au     &stno_vi  &stno_ov   &semi
 &none         &stno_ef  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &stno_eve  &none
-              &none     &none     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
+              &none     &to 0     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
 
@@ -608,7 +608,7 @@
 &none  &none     &none    &apos_m   &none            &quotes 0 0                       &to 5              &none    &none     &apos_y   &stno_oj  &to 3
 &none  &apos_re  &apos_s  &apos_t   &stno_ph         &par_chv 0 0                      &none              &apos_n  &stno_ka  &stno_Le  &stno_vo  &none
 &none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_vy  &none
-       &none     &none    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
+       &none     &to 0    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
             >;
         };
 
@@ -628,7 +628,7 @@
 &none  &none  &none  &none  &none  &none    &to 0  &none  &none  &none  &none  &to 5
 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-       &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+       &none  &to 0  &none  &none  &none    &none  &none  &none  &none  &none
             >;
         };
     };
