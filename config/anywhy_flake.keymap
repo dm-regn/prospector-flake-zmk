@@ -404,13 +404,6 @@
             label = "STNO_GT";
         };
 
-        stno_au: stno_ua {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp U>;
-            label = "STNO_UA";
-        };
-
         stno_ef: stno_ef {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
