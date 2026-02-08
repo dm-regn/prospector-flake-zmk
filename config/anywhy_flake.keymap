@@ -564,6 +564,13 @@
             bindings = <&kp B &kp L &kp E>;
             label = "STNO_BLE";
         };
+
+        stno_ua: stno_ua {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U &kp A>;
+            label = "STNO_UA";
+        };
     };
 
     keymap {
@@ -612,7 +619,7 @@
         Quick {
             display-name = "Quick";
             bindings = <
-&none  &stno_rb  &none    &apos_m   &none            &quotes 0 0                       &to 5              &none    &none     &apos_y   &stno_vy   &to 3
+&none  &stno_rb  &none    &apos_m   &none            &quotes 0 0                       &to 5              &none    &stno_ua  &apos_y   &stno_vy   &to 3
 &none  &apos_re  &apos_s  &apos_t   &stno_ph         &par_chv 0 0                      &stno_Le           &apos_n  &stno_ka  &none     &stno_vo   &none
 &none  &none     &apos_c  &none     &apos_d          &brk_brc 0 0                      &none              &apos_L  &stno_ky  &apos_ve  &stno_ble  &none
        &none     &to 0    &kp PIPE  &mt TILDE UNDER  &mt DOUBLE_QUOTES SINGLE_QUOTE    &mt QUESTION EXCL  &kp AT   &kp AMPS  &none     &none
