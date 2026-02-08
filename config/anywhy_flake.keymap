@@ -571,6 +571,13 @@
             bindings = <&kp U &kp A>;
             label = "STNO_UA";
         };
+
+        stno_au: stno_au {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp U>;
+            label = "STNO_AU";
+        };
     };
 
     keymap {
