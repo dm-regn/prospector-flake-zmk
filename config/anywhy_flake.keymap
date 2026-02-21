@@ -584,7 +584,7 @@
         compatible = "zmk,keymap";
 
         Alpha {
-            display-name = "Alpha";
+            display-name = "Flake";
             bindings = <
 &act_dir 0 0  &kp B        &kp W  &kp M            &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp Q         &to 6
 &sl 4         &kp R        &kp S  &kp T            &kp H        &kp X         &kp J     &kp N    &kp A            &kp I         &kp O         &sl 4
