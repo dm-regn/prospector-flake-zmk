@@ -108,6 +108,13 @@
             layers = <1>;
             require-prior-idle-ms = <5>;
         };
+
+        tab {
+            bindings = <&mt LG(TAB) TAB>;
+            key-positions = <1 2>;
+            layers = <0>;
+            require-prior-idle-ms = <5>;
+        };
     };
 
     behaviors {
@@ -586,10 +593,10 @@
         Alpha {
             display-name = "Flake";
             bindings = <
-&act_dir 0 0  &kp B        &kp W  &kp M            &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp Q         &to 6
-&sl 4         &kp R        &kp S  &kp T            &kp H        &kp X         &kp J     &kp N    &kp A            &kp I         &kp O         &sl 4
-&kp ENTER     &key_repeat  &kp C  &kp G            &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
-              &to 1        &to 2  &mt LG(TAB) TAB  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
+&act_dir 0 0  &kp B        &kp W  &kp M  &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp Q         &to 6
+&sl 4         &kp R        &kp S  &kp T  &kp H        &kp X         &kp J     &kp N    &kp A            &kp I         &kp O         &sl 4
+&kp ENTER     &key_repeat  &kp C  &kp G  &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
+              &to 1        &to 2  &none  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
             >;
         };
 
