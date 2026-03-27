@@ -593,9 +593,9 @@
         Alpha {
             display-name = "Flake";
             bindings = <
-&act_dir 0 0  &kp V        &kp W  &kp M  &mt PSCRN P  &kp Z         &to 1     &kp X    &kp L            &kp Y         &kp Q         &to 6
-&sl 4         &kp R        &kp S  &kp N  &kp H        &kp B         &kp J     &kp A    &kp O            &kp I         &kp E         &sl 4
-&kp ENTER     &key_repeat  &kp C  &kp F  &kp D        &mt F4 ESC    &kp LGUI  &kp G    &kp K            &kp U         &key_repeat   &kp ENTER
+&act_dir 0 0  &kp X        &kp W  &kp M  &mt PSCRN P  &kp Z         &to 1     &kp Y    &kp L            &kp U         &kp Q         &to 6
+&sl 4         &kp R        &kp S  &kp N  &kp H        &kp B         &kp J     &kp I    &kp O            &kp A         &kp E         &sl 4
+&kp ENTER     &key_repeat  &kp C  &kp F  &kp D        &mt F4 ESC    &kp LGUI  &kp G    &kp K            &kp V         &key_repeat   &kp ENTER
               &to 1        &to 2  &none  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 T  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
             >;
         };
