@@ -84,7 +84,7 @@
         mute {
             bindings = <&kp C_MUTE>;
             key-positions = <45 44>;
-            layers = <0>;
+            layers = <1>;
             require-prior-idle-ms = <5>;
         };
 
@@ -600,20 +600,20 @@
         Alpha {
             display-name = "Flake";
             bindings = <
-&act_dir 0 0  &kp B        &kp W  &kp M  &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y         &kp Q         &to 6
-&sl 4         &kp R        &kp S  &kp T  &kp H        &kp X         &kp J     &kp N    &kp A            &kp I         &kp O         &sl 4
-&kp ENTER     &key_repeat  &kp C  &kp G  &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V         &key_repeat   &kp ENTER
-              &to 1        &to 2  &none  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &kp C_VOL_DN  &kp C_VOL_UP
+&act_dir 0 0  &kp B        &kp W  &kp M  &mt PSCRN P  &kp Z         &to 1     &kp F    &kp U            &kp Y  &kp Q        &to 6
+&sl 4         &kp R        &kp S  &kp T  &kp H        &kp X         &kp J     &kp N    &kp A            &kp I  &kp O        &sl 4
+&kp ENTER     &key_repeat  &kp C  &kp G  &kp D        &mt F4 ESC    &kp LGUI  &kp L    &kp K            &kp V  &key_repeat  &kp ENTER
+              &none        &none  &none  &lt 1 SPACE  &sl 3         &sl 3     &lt 2 E  &kp LA(LC(DEL))  &none  &none
             >;
         };
 
         Navi {
             display-name = "Navi";
             bindings = <
-&kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &none    &to 2      &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none       &to 0
-&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK   &sk LCTRL
-&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LC(X) LC(C)  &mt LG(V) LC(V)  &sk LSHFT      &none    &none      &sk LSHFT       &msc SCRL_LEFT  &msc SCRL_RIGHT  &kp C_PREV  &kp C_NEXT
-                 &to 1            &to 0            &none            &none          &none    &dbl_mclk  &mkp LCLK       &trpl_mclk      &none            &none
+&kp LC(MINUS)    &kp LC(EQUAL)    &mt HOME PG_UP   &kp UP           &mt END PG_DN  &none    &to 2      &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &none         &to 0
+&sk LC(LSHFT)    &kp LEFT_GUI     &kp LEFT         &kp DOWN         &kp RIGHT      &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK     &sk LCTRL
+&mt LC(Y) LC(Z)  &mt LC(F) LC(A)  &mt LC(X) LC(C)  &mt LG(V) LC(V)  &sk LSHFT      &none    &none      &sk LSHFT       &msc SCRL_LEFT  &msc SCRL_RIGHT  &kp C_PREV    &kp C_NEXT
+                 &to 1            &to 0            &none            &none          &none    &dbl_mclk  &mkp LCLK       &trpl_mclk      &kp C_VOL_DN     &kp C_VOL_UP
             >;
         };
 
