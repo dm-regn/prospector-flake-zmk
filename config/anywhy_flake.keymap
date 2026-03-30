@@ -585,6 +585,13 @@
             bindings = <&kp A &kp U>;
             label = "STNO_AU";
         };
+
+        fast_re: fast_re {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp E &kp MINUS>;
+            label = "FAST_RE";
+        };
     };
 
     keymap {
@@ -625,7 +632,7 @@
             bindings = <
 &none         &stno_br  &year     &fast_na     &stno_pd      &id_1st 0 0    &to 4     &stno_fl      &stno_lu     &stno_ou  &none      &to 2
 &cma_prd 0 0  &stno_fe  &stno_sw  &stno_gt     &stno_gh      &kp BSPC       &stno_je  &none         &stno_au     &stno_vi  &stno_ov   &stno_oo
-&kp PERIOD    &stno_ef  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &none     &stno_lf      &stno_ke     &stno_ve  &stno_eve  &semi
+&kp PERIOD    &stno_ef  &stno_cs  &stno_gm     &stno_dp      &kp DEL        &fast_re  &stno_lf      &stno_ke     &stno_ve  &stno_eve  &semi
               &none     &to 0     &kp LC(DEL)  &kp LC(BSPC)  &none          &none     &kp LC(BSPC)  &kp LC(DEL)  &none     &none
             >;
         };
